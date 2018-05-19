@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "962787646151",
+    "firebase_url": "https://vcare-f787a.firebaseio.com",
+    "project_id": "vcare-f787a",
+    "storage_bucket": "vcare-f787a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962787646151:android:d6026a15f16670b8",
+        "android_client_info": {
+          "package_name": "com.example.vcare.vcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962787646151-7mmssih6b7jm5oi3hdq5g17662ndgvm0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBq_9SIIAixNACA5n-8aSxJgxAhheAyTqs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
