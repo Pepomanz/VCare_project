@@ -31,7 +31,7 @@ pyshell.on('message', function (message) {
 pyshell.end(function (err) {
 })*//*
 var FCM = require('fcm-node');
-var serverKey = 'AAAA4Cqdmsc:APA91bHq8pvdZUJutH0aTH9oIhTQT12qMeNC5wIiz6o1Uo6XO8PpD7Fj4VmoT-BBt0cdn5Pb9Q84SDYeF6dNIaOHpb6dDiuxzAkylKjAeZlL2WwCxr5prfVbs2YBObIn3_zpV6ko9T2K'; //put your server key here
+var serverKey = ''; //put your server key here
 var fcm = new FCM(serverKey);
 
 var message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
