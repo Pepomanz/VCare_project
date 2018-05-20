@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.preference.PreferenceCategory
+        android:title="@string/pref_bluetooth_title">
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:disableDependentsState="true"
+            android:id="@+id/switchBT"
+            android:key="swicthBT"
+            android:summary="Switch to enable bluetooth."
+            android:title="Enable Bluetooth" />
+        <android.support.v7.preference.ListPreference
+            android:defaultValue="1"
+            android:key="deviceList"
+            android:summary="Select device to pair."
+            android:title="List Paired Devices" />
+    </android.support.v7.preference.PreferenceCategory>
+    <android.support.v7.preference.PreferenceCategory
+        android:title="@string/pref_connection_control">
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="Service"
+            android:summary="Switch to start service"
+            android:title="Start Service" />
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>

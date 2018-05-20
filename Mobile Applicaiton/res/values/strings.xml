@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">VCare</string>
+    <string name="mainPage">Statistic</string>
+    <string name="profile">Profile</string>
+    <string name="maps">Maps</string>
+    <string name="startBT">Start</string>
+    <string name="stopBT">Stop</string>
+    <string name="setting">Setting</string>
+    <string name="pref_connection_control">Connection Control</string>
+    <string name="pref_bluetooth_title">Bluetooth</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_test">Test</string>
+    <string name="info_title">Your position</string>
+    <string name="info_snippet"></string>
+    <string name="information">Information</string>
+    <string name="notification">Notification</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_maps">Map</string>
+
+</resources>

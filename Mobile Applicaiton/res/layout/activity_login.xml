@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_login">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="158dp"
+        android:layout_height="162dp"
+        android:src="@drawable/vcare_logo"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"/>
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:gravity="center|top"
+        android:layout_below="@+id/logo"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+            <EditText
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:id="@+id/etUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="15sp"
+                android:background="@drawable/et_login"
+                android:hint="USERNAME"
+                android:paddingLeft="20dp"
+                android:textColorHint="@android:color/white" />
+            <EditText
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="15sp"
+                android:hint="PASSWORD"
+                android:textColorHint="@android:color/white"
+                android:background="@drawable/et_login"
+                android:paddingLeft="20dp"/>
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="15sp"
+                android:text="LOG IN"
+                android:textColor="@android:color/white"
+                android:background="@drawable/selector_btn_default" />
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="15sp"
+                android:text="SIGN UP"
+                android:textColor="@android:color/white"
+                android:background="@drawable/selector_btn_default"
+/>
+    </LinearLayout>
+</RelativeLayout>

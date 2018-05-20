@@ -1,5 +1,6 @@
 package com.example.vcare.vcare.fragment;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -109,13 +110,15 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback{
     }
 
     private void getLocationPermission() {
-        if (ContextCompat.checkSelfPermission(getContext(),
-                android.Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
+        if ( (ContextCompat.checkSelfPermission(getActivity().getApplicationContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION )
+                == PackageManager.PERMISSION_GRANTED)|| (ContextCompat.checkSelfPermission(getActivity().getApplicationContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION )
+                == PackageManager.PERMISSION_GRANTED)){
             mLocationPermissionGranted = true;
         } else {
             ActivityCompat.requestPermissions(getActivity(),
-                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION,android.Manifest.permission.ACCESS_FINE_LOCATION},
                     1);
         }
     }
@@ -182,6 +185,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback{
             Log.e("Exception: %s", e.getMessage());
         }
     }
+
     private void showCurrentPlace() {
         if (mMap == null) {
             return;

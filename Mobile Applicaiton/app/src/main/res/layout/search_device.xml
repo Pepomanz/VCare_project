@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@color/colorBackground"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_weight="1"
+        android:text="List of Paired Device"
+        android:textSize="25sp"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:textColor="@android:color/white"
+        android:paddingBottom="20dp"
+        android:background="@color/colorBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_weight="1"
+        android:text="test"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

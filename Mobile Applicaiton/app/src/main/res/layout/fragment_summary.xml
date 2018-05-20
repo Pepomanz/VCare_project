@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textColor="@android:color/white"
+            android:background="@color/colorBgRegis"
+            android:textSize="24sp"
+            android:text="Statistic"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.github.mikephil.charting.charts.LineChart>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="Detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black" />
+        </LinearLayout>
+        <com.example.vcare.vcare.CustomView.DetailCard
+            android:layout_marginTop="10dp"
+            android:id="@+id/dc_Distance"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <com.example.vcare.vcare.CustomView.DetailCard
+            android:id="@+id/dc_Speed"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <com.example.vcare.vcare.CustomView.DetailCard
+            android:id="@+id/dc_Temperature"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <com.example.vcare.vcare.CustomView.DetailCard
+            android:id="@+id/dc_Fuelrate"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+        <com.example.vcare.vcare.CustomView.DetailCard
+            android:id="@+id/dc_TroubleCode"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+</LinearLayout>

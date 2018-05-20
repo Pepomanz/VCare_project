@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#404040</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBackground">#1A1F36</color>
+    <color name="colorTextBG">#74748A</color>
+    <color name="colorBlock">#282C41</color>
+    <color name="colorBgRegis">#2ebb98</color>
+    <color name="colorBgCardetail">#a3c2c2</color>
+    <color name="colorIcPressed">#2ebb98</color>
+    <color name="colorIcDefault">#c4c4c4</color>
+
+</resources>
