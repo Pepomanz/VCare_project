@@ -41,9 +41,20 @@ import matplotlib.pyplot as plt
 #    
 #    return float(result[1])
 
+def clear_zero_out(df):
+    drop_index = [df.index[idx] for idx in range(df.shape[0]) if df.iloc[idx] == 0]
+    for index in drop_index:
+        df = df.drop(labels=[index])
+    return df
+
 #For creating kmeans model
 def anomaly_knn_model(df, n_cluster):
+    print(type(df))
+    df = clear_zero_out(df)
+    print(type(df))
     kmeans = KMeans(n_clusters=n_cluster, random_state=0).fit(df.values.reshape(-1,1))
+    #clean zero
+    
     
     # separate data to each label
     kmean_dict = {}
@@ -123,12 +134,14 @@ def elbow_plot(data, col):
     plt.title('The Elbow Method showing the optimal k for ' + col)
     plt.show()
     
+
+#    
 def main():
     df_car = pd.read_csv("./df_car.csv", index_col = 'convertTime')    
     n_cluster_dict = {
-                'load': 2,
-                'temp': 2,
-                'rpm': 2
+                'load': 4,
+                'temp': 4,
+                'rpm': 4
             }
 #    df_car = pd.read_csv("/home/ubuntu/www/rest_api/routes/df_car.csv", index_col = 'convertTime')
     anomaly_dict = {
@@ -153,14 +166,14 @@ def main():
                                 66: 'voltage',
                             }
     
-    print("----- plotting elbow")
-    for sensor_id in kmean_sensor_list:
-        data = np.array(df_car[kmean_sensor_list[sensor_id]].values)
-        elbow_plot(data,kmean_sensor_list[sensor_id])
-        
+#    print("----- plotting elbow")
+#    for sensor_id in kmean_sensor_list:
+#        data = np.array(clear_zero_out(df_car[kmean_sensor_list[4]]).values)
+#        elbow_plot(data,kmean_sensor_list[sensor_id])
+#        
     
     status = {}
-    data = 11.9
+    data = 2327
     #detect anomaly by kmean
     for sensor_id in kmean_sensor_list:
 #        data = queryLastData(sensor_id)
