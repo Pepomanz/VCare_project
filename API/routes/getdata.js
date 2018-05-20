@@ -50,8 +50,25 @@ const insert_carSensor = (req) => {
      }
 }
 
+var FCM = require('fcm-node');
+var serverKey = ''; //put your server key here
+var fcm = new FCM(serverKey);
 
 router_getdata.post('/', async function(req,res,next){
+    var fcm_message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+        to: '/topics/Alert', 
+        collapse_key: 'your_collapse_key',
+        
+        notification: {
+            title: 'Warning Notification', 
+            body: '' 
+        },
+        
+        data: {  //you can send only notification or only data(or include both)
+            my_key: 'my value',
+            my_another_key: 'my another value'
+        }
+    };
     console.log("Start getdata")
     console.log("receive data",data)
     // var pyshell = new PythonShell('sensor_status.py',options);
@@ -70,8 +87,38 @@ router_getdata.post('/', async function(req,res,next){
     }
     my_python((data) => {
         console.log("Send Data",data)
-        res.json(data)
+        if (data['response'][0]['load'] == '1'){
+            fcm_message['notification']['body'] += 'Load abnormal !! '
+        }
+        if (data['response'][1]['temp'] == '1'){
+            fcm_message['notification']['body'] += 'temp abnormal !! '
+        }
+        if (data['response'][2]['rpm'] == '1'){
+            fcm_message['notification']['body'] += 'rpm abnormal !! '
+        }
+        if (data['response'][3]['voltage'] == '1'){
+            fcm_message['notification']['body'] += 'voltage abnormal !! '
+        }
+        if (data['response'][4]['speed'] == '1'){
+            fcm_message['notification']['body'] += 'speed abnormal !! '
+        }
+        if (data['response'][5]['fuel'] == '1'){
+            fcm_message['notification']['body'] += 'fuel abnormal !! '
+        }
+        if (data['response'][6]['mileage'] == '1'){
+            fcm_message['notification']['body'] += 'mileage abnormal !! '
+        }
+        // res.json(data)
+        console.log(fcm_message)
+        fcm.send(fcm_message, function(err, response){
+            if (err) {
+                console.log("Something has gone wrong!");
+            } else {
+                console.log("Successfully sent with response: ", response);
+            }
+        })
     })
+
 
 });
 module.exports = router_getdata;
