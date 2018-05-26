@@ -351,12 +351,21 @@ def main():
     # df_sensor = cleanDataByIQR(df_sensor)
     result = {}
     result['data'] = list(df_sensor['value'].values)
-
+    del_index = []
+    for idx in range(len(result['data'])):
+        if result['data'][idx] == 0:
+            del_index.append(idx)
+            
     #convert time to label
     label = []
     for idx in df_sensor.index:
         label.append(str(idx.format("YYYY-MM-DD HH:mm:ss")))
     result['label'] = label
+    
+    for idx in sorted(del_index, reverse=True):
+        del result['data'][idx]
+        del result['label'][idx]
+        
     result['summary'] = summary
     cur.close()
     conn.close()
